@@ -85,7 +85,7 @@ spec:
         app.kubernetes.io/name: {{.Values.statusService.name}}
         app.kubernetes.io/part-of: unguard
         {{ if .Values.enableIstioSidecar }}
-        istio-injection: enabled
+        sidecar.istio.io/inject: 'true'
         {{ end }}
         {{ if .Values.enableJaegerSidecar }}
         sidecar.jaegertracing.io/inject: 'true'
