@@ -42,7 +42,7 @@ metadata:
     app.kubernetes.io/name: {{.Values.envoyProxy.name}}
     app.kubernetes.io/part-of: unguard
     {{ if .Values.enableIstioSidecar }}
-    sidecar.istio.io/inject: 'true'
+    istio-injection: enabled
     {{ end }}
     {{ if .Values.enableJaegerSidecar }}
     sidecar.jaegertracing.io/inject: 'true'
