@@ -33,6 +33,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{.Values.maliciousLoadGenerator.name}}
         app.kubernetes.io/part-of: unguard
+        {{ if .Values.enableIstioSidecar }}
+        sidecar.istio.io/inject: 'true'
+        {{ end }}
     spec:
       terminationGracePeriodSeconds: {{.Values.maliciousLoadGenerator.deployment.terminationGracePeriodSeconds}}
       restartPolicy: {{.Values.maliciousLoadGenerator.deployment.restartPolicy}}

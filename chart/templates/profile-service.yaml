@@ -47,6 +47,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{.Values.profileService.name}}
         app.kubernetes.io/part-of: unguard
+        {{ if .Values.enableIstioSidecar }}
+        sidecar.istio.io/inject: 'true'
+        {{ end }}
     spec:
       containers:
         - name: {{.Values.profileService.name}}

@@ -81,6 +81,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{.Values.proxyService.name}}
         app.kubernetes.io/part-of: unguard
+        {{ if .Values.enableIstioSidecar }}
+        sidecar.istio.io/inject: 'true'
+        {{ end }}
     spec:
       serviceAccountName: {{.Values.proxyService.serviceAccount.name}}
       containers:

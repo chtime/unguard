@@ -84,6 +84,9 @@ spec:
       labels:
         app.kubernetes.io/name: {{.Values.statusService.name}}
         app.kubernetes.io/part-of: unguard
+        {{ if .Values.enableIstioSidecar }}
+        sidecar.istio.io/inject: 'true'
+        {{ end }}
     spec:
       serviceAccountName: {{.Values.statusService.serviceAccount.name}}
       containers:

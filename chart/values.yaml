@@ -3,6 +3,8 @@
 # Declare variables to be passed into your templates.
 kubernetesClusterDomain: cluster.local
 
+enableIstioSidecar: false
+
 # Local Development
 # Enable if deploying locally on minikube or kind
 # Creates an ingress
