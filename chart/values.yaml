@@ -8,6 +8,7 @@ kubernetesClusterDomain: cluster.local
 # Creates an ingress
 localDev:
   enabled: true
+  host: unguard.kube
 
 # Cloud deployment to AWS
 # Enable if deploying ta an aws cluster

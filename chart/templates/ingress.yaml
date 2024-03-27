@@ -28,7 +28,7 @@ metadata:
 spec:
   rules:
     {{if .Values.localDev.enabled}}
-    - host: unguard.kube
+    - host: {{ .Values.localDev.host }}
     {{end}}
     {{if .Values.localDev.enabled}}
       http:
