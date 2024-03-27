@@ -50,6 +50,9 @@ spec:
         {{ if .Values.enableIstioSidecar }}
         sidecar.istio.io/inject: 'true'
         {{ end }}
+        {{ if .Values.enableJaegerSidecar }}
+        sidecar.jaegertracing.io/inject: 'true'
+        {{ end }}
     spec:
       containers:
         - name: {{.Values.profileService.name}}

@@ -4,6 +4,7 @@
 kubernetesClusterDomain: cluster.local
 
 enableIstioSidecar: false
+enableJaegerSidecar: false
 
 # Local Development
 # Enable if deploying locally on minikube or kind

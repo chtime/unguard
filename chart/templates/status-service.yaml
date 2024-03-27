@@ -87,6 +87,9 @@ spec:
         {{ if .Values.enableIstioSidecar }}
         sidecar.istio.io/inject: 'true'
         {{ end }}
+        {{ if .Values.enableJaegerSidecar }}
+        sidecar.jaegertracing.io/inject: 'true'
+        {{ end }}
     spec:
       serviceAccountName: {{.Values.statusService.serviceAccount.name}}
       containers:
